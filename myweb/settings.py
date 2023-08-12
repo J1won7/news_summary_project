@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-0=xqgntxde)t%b*+byg4+k(fl#%w3c)om#a-a&spm9*^1mq7ea'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -70,7 +70,13 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'newssum',
+        'NAME': 'news_summary_project',
+        'CLIENT': {
+                    'host': 'svc.sel3.cloudtype.app:31857',
+                    'port': 31857,
+                    'username': 'mongoadmin',
+                    'password': "pikachu"
+                }
     }
 }
 
