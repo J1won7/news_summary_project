@@ -11,7 +11,7 @@
           <a href="{{ news.url }}">{{ news.title }}</a>
         </h2>
         <img src="{{ news.image }}" alt="{{ news.title }}" width="300" />
-        <p>{{ news.summary }}</p>
+        <p>{{ news.summary }},{{ news.pk }}</p>
       </div>
       {% endfor %}
     </section>
