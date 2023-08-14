@@ -2,6 +2,13 @@
   <head>
     <title>뉴스 요약 사이트</title>
     <style>
+      .news-category {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        max-width: 80%;
+      }
+
       .news-item {
         border: 1px solid #ccc;
         padding: 10px;
@@ -37,6 +44,8 @@
   </head>
   <body>
     <h1><a href="">뉴스 목록</a></h1>
+    <h2 class="news-category"><a href="/100">정치</a> | <a href="/101">경제</a> | <a href="/102">사회</a> |
+      <a href="/103">생활/문화</a> | <a href="/104">세계</a> | <a href="/105">IT/과학</a></h2>
     <section>
       {% for news in news_objects %}
       <div class="news-item">
