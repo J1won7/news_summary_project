@@ -7,8 +7,11 @@ class News(models.Model):
     title = models.CharField(max_length=50)
     image = models.FilePathField(null=True)
     summary = models.TextField()
-    write_time = models.CharField(max_length=20)
+    time = models.CharField(max_length=20)
     url = models.FilePathField()
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         db_table = "news"

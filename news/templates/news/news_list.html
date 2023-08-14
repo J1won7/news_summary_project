@@ -1,17 +1,53 @@
 <html>
   <head>
-    <title>Photo App</title>
+    <title>뉴스 요약 사이트</title>
+    <style>
+      .news-item {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        max-width: 80%;
+      }
+
+      .news-title {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .news-time {
+        font-size: 12px;
+        color: #666;
+      }
+
+      .news-image {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .news-summary {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        max-width: 100%;
+
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body>
     <h1><a href="">뉴스 목록</a></h1>
     <section>
-      {% for news in newslist %}
-      <div>
-        <h2>
+      {% for news in news_objects %}
+      <div class="news-item">
+        <h2 class="news-title">
           <a href="{{ news.url }}">{{ news.title }}</a>
         </h2>
-        <img src="{{ news.image }}" alt="{{ news.title }}" width="300" />
-        <p>{{ news.summary }},{{ news.pk }}</p>
+        <p class="news-time">{{ news.time }}</p>
+        {% if news.image %}
+          <img class="news-image" src="{{ news.image }}" alt="{{ news.title }}" />
+        {% endif %}
+        <p class="news-summary">{{ news.summary | safe }}</p>
       </div>
       {% endfor %}
     </section>
