@@ -6,4 +6,3 @@ urlpatterns = [
     path('', newsAPI),
     path('<int:category>', newsAPI)
 ]
-
