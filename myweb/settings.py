@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -18,6 +17,9 @@ ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
+# 스케줄러 설정
+SCHEDULER_AUTOSTART = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'news',
     'corsheaders',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from newsSummary.news_crawling_tasks import start_crawling
+start_crawling()
