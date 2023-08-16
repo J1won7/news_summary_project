@@ -34,5 +34,5 @@ def crawl_and_save_data():
 
 
 def start_crawling():
-    sched.add_job(crawl_and_save_data, "interval", minutes=1)
+    sched.add_job(crawl_and_save_data, "interval", minutes=5)
     sched.start()
