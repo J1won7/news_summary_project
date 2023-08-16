@@ -128,5 +128,5 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-from newsSummary.news_crawling_tasks import start_crawling
-start_crawling()
+#from newsSummary.news_crawling_tasks import start_crawling
+#start_crawling()
